@@ -16,6 +16,11 @@ app.use ((req,res,next)=>{
         "message":"Route Not Found"
     });
 })
+app.use ((err,req,res,next)=>{
+    res.status(5000).json({
+        "message":"Something broke"
+    });
+})
 
 
 
