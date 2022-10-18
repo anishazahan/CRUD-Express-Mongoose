@@ -2,11 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+const userRouter = require("./routes/user.route")
+
 ////,,,,middle ware,,,,
 
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+app.use("/api/users", userRouter);
 
 
 
