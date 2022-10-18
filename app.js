@@ -10,6 +10,17 @@ app.use(express.json());
 
 
 
+//   api/user : GET
+//   api/user/:id : GET
+//   api/user/ : POST
+//   api/user/:id : PATCH
+//   api/user/:id : DELETE
+
+
+
+
+
+
 app.get ("/",(req,res)=>{
     res.sendFile(__dirname + "/./views/index.html")
 })
