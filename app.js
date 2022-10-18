@@ -22,15 +22,12 @@ app.use ((req,res,next)=>{
 })
 
 
-
 ///---------server error handling------------
 app.use ((err,req,res,next)=>{
     res.status(5000).json({
         "message":"Something broke"
     });
 })
-
-
 
 
 module.exports = app;
