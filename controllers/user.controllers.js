@@ -54,10 +54,15 @@ const updateUser = (req,res)=>{
 }
 
 //   api/user/:id : DELETE
-const deleteUser = (req,res)=>{
-    res.status(200).json({
-        message:"update users"
-    });
+const deleteUser = async (req,res)=>{
+    try {
+        const findOneUser = await User.deleteOne({id:req.params.id})
+        res.status(200).json({
+            message:"delate success"
+        });
+      } catch (error) {
+        res.status(500).send(error.message);
+      }
 }
 
 module.exports = {
