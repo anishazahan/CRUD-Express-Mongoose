@@ -5,3 +5,5 @@ const getAllUsers = (req,res)=>{
         message:"all users"
     });
 }
+
+module.exports = getAllUsers;
