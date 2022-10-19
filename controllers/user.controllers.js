@@ -1,5 +1,6 @@
 
 const User = require('../models/user.model')
+const {v4:uuidv4} = require ("uuid");
 
 
 //   api/user : GET
@@ -17,12 +18,13 @@ const getOneUsers = (req,res)=>{
 }
 
 //   api/user/ : POST
-const createUser = (req,res)=>{
+const createUser = async(req,res)=>{
     const newUser = new User({
-        id:
+        id:uuidv4(),
         name:req.body.name,
         age:Number(req.body.name)
     })
+    await newUser.save();
     res.status(201).json({
         message:"Create users"
     });
