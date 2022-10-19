@@ -1,5 +1,6 @@
 
 
+
 const getAllUsers = (req,res)=>{
     res.status(200).json({
         message:"all users"
@@ -26,8 +27,4 @@ const deleteUser = (req,res)=>{
     });
 }
 
-module.exports = {
-    getAllUsers,
-    getOneUsers,
-    createUser
-};
+module.exports = getAllUsers;
