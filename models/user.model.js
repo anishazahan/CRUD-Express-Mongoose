@@ -9,4 +9,12 @@ const userSchema = mongoose.Schema({
         type :String,
         require :true,
     },
+    age: {
+        type :Number,
+        require :true,
+    },
+    createTime: {
+        type :Date,
+       default: Date.now
+    },
 })

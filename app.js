@@ -1,9 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-require('./config/config')
+require('./config/db')
+// const Connection = require('./database/db')
+
 
 const userRouter = require("./routes/user.route")
+// Connection();
 
 ////,,,,middle ware,,,,
 
