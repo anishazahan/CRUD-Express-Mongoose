@@ -16,15 +16,18 @@ const getAllUsers = async (req,res)=>{
 }
 
 //   api/user/:id : GET
-const getOneUsers = (req,res)=>{
-    res.status(200).json({
-        message:"get one users"
-    });
+const getOneUsers = async (req,res)=>{
+  try {
+    
+    const findOneUser = await User.findOne({id:req.params.id})
+    res.status(200).json(findOneUser);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
 }
 
 //   api/user/ : POST
 const createUser = async(req,res)=>{
-
 
     try {
        console.log(req.body)
